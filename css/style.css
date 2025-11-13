@@ -1,0 +1,181 @@
+/* Colors */
+:root {
+    --npu-blue: #002b5c;
+    --npu-gold: #c89d2f;
+    --overlay-bg: rgba(0, 0, 0, 0.45);
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Blue and gold helpers */
+.bg-npu-blue {
+    background-color: var(--npu-blue);
+}
+
+.bg-npu-gold {
+    background-color: var(--npu-gold);
+}
+
+/* Header */
+.top-header .header-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+}
+
+.logo-sm {
+    height: 40px;
+    width: auto;
+}
+
+/* Weather widget */
+#weather-widget {
+    min-width: 120px;
+}
+
+/* Gold feature bar */
+.feature-bar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.feature-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.feature-link:hover h2 {
+    text-decoration: underline;
+}
+
+/* Campus map thumb */
+.map-thumb {
+    height: 70px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+/* Carousel */
+.hero-carousel {
+    position: relative;
+    height: 70vh;
+    min-height: 320px;
+    max-height: 650px;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Quote overlay */
+.carousel-overlay {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    max-width: 60%;
+    background: transparent;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+}
+
+.hero-quote {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Carousel controls */
+.carousel-control {
+    position: absolute;
+    bottom: 1.5rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--overlay-bg);
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 1.25rem;
+}
+
+.carousel-control.next {
+    right: 1.25rem;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Dots */
+.carousel-dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #ffffff;
+}
+
+/* Footer */
+.bottom-bar {
+    margin-top: 0;
+}
+
+/* Back to top button */
+#back-to-top {
+    font-size: 0.85rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+    .carousel-overlay {
+        max-width: 80%;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .hero-carousel {
+        height: 60vh;
+    }
+}
