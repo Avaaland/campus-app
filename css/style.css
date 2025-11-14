@@ -62,9 +62,9 @@ body {
 /* Carousel */
 .hero-carousel {
     position: relative;
-    height: 70vh;
-    min-height: 320px;
-    max-height: 650px;
+    height: 82vh;
+    min-height: 420px;
+    max-height: none;
     overflow: hidden;
 }
 
@@ -92,7 +92,7 @@ body {
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
-    max-width: 60%;
+    max-width: 70%;
     background: transparent;
     padding: 1rem 1.25rem;
     border-radius: 10px;
@@ -101,9 +101,9 @@ body {
 .hero-quote {
     margin: 0;
     color: #ffffff;
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 750;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
 }
 
 /* Carousel controls */
