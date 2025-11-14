@@ -109,3 +109,30 @@ function setupWeatherPlaceholder() {
     //For now, fake text sp it doesn't look empty
     tempEl.textContent = "Chicago, 42 F, Cloudy";
 }
+
+// Map zoom function
+document.addEventListener("DOMContentLoaded", () => {
+    const mapThumb = document.querySelector(".map-thumb");
+    const modal = document.getElementById("map-modal");
+    const modalImg = document.getElementById("map-modal-img");
+    const closeBtn = document.querySelector(".close-map");
+
+    if(mapThumb) {
+        mapThumb.addEventListener("click", () => {
+            modal.style.display = "flex";
+            modalImg.src = mapThumb.src;
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});

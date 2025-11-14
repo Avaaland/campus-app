@@ -59,6 +59,33 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.25);
 }
 
+/* Map modal*/
+.map-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.map-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close-map {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
 /* Carousel */
 .hero-carousel {
     position: relative;
@@ -109,15 +136,21 @@ body {
 /* Carousel controls */
 .carousel-control {
     position: absolute;
-    bottom: 1.5rem;
-    padding: 0.4rem 0.75rem;
-    border-radius: 999px;
+    bottom: 2rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
     border: none;
-    background: var(--overlay-bg);
+    background: rgba(0, 0, 0, 0.55);
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     line-height: 1;
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: scale(1.1);
 }
 
 .carousel-control.prev {
