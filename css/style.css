@@ -148,11 +148,6 @@ body {
     transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.carousel-control:hover {
-    background: rgba(0, 0, 0, 0.75);
-    transform: scale(1.1);
-}
-
 .carousel-control.prev {
     left: 1.25rem;
 }
@@ -162,7 +157,8 @@ body {
 }
 
 .carousel-control:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
+    transform: scale(1.1);
 }
 
 /* Dots */
@@ -211,4 +207,60 @@ body {
     .hero-carousel {
         height: 60vh;
     }
+}
+
+/* Events page */
+.events-main {
+    min-height: 70vh;
+}
+
+/* White rounded cards*/
+.event-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Title with blue underline */
+.event-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--npu-blue);
+    display: inline-block;
+}
+
+/* Small icon spacing */
+.event-icon {
+    margin-right: 0.4rem;
+}
+
+/* Dining page */
+.back-link {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.back-link span:first-child {
+    font-size: 1.1rem;
+}
+
+/* Spacer on right side, title centered */
+.back-link-spacer {
+    width: 80px;
+}
+
+.dining-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.68);
+    border: none;
+}
+
+.dining-title {
+    display: inline-block;
+    border-bottom: 3px solid var(--npu-blue);
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.75rem;
 }

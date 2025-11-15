@@ -21,7 +21,7 @@
             <div class="container py-3 d-flex align-items-center justify-content-between">
 
                 <!-- Left: Back to home -->
-                <a href="index.html" class="text-white text-decoration-none d-flex align-items-center gap-1">
+                <a href="index.html" class="back-link text-white text-decoration-none d-flex align-items-center gap-1">
                     <span aria-hidden="true">←</span>
                     <span class="small">Back to home</span>
                 </a>
@@ -32,7 +32,7 @@
                 </h1>
 
                 <!-- Right: empty spacer -->
-                <div style="width: 80px;"></div>
+                <div class="back-link-spacer"></div>
             </div>
         </header>
 
@@ -110,10 +110,11 @@
         <footer class="bottom-bar bg-npu-blue text-white py-3 mt-0">
             <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
                 <div class="small">2025 Campus Life Super App</div>
-                <a href="index.html" class="btn btn-outline-light btn-sm">
-                    Back to home
-                </a>
+                <button id="back-to-top" class="btn btn-outline-light btn-sm">Back to top</button>
             </div>
         </footer>
+
+        <!-- JS -->
+        <script src="js/script.js"></script>
     </body>
 </html>
