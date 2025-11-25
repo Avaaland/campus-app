@@ -4,7 +4,8 @@ console.log("script.js is connected to home page");
 document.addEventListener("DOMContentLoaded", () => {
     setupCarousel();
     setupBackToTop();
-    setupWeatherPlaceholder();
+    setupWeather();
+    setupMapModal();
 });
 
 // Carousel logic
@@ -101,28 +102,66 @@ function setupBackToTop() {
     });
 }
 
-// Weather placeholder, will replace with real API later
-function setupWeatherPlaceholder() {
+// Weather API
+function setupWeather() {
     const tempEl = document.getElementById("weather-temp");
     if (!tempEl) return;
 
-    //For now, fake text sp it doesn't look empty
-    tempEl.textContent = "Chicago, 42 F, Cloudy";
+    // North Park University coordinates
+    const latitude = 41.97503;
+    const longitude = -87.71088;
+
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code&temperature_unit=fahrenheit&timezone=auto`;
+
+    function describeWeather(code) {
+        if (code === 0) return "Clear";
+        if ([1, 2, 3].includes(code)) return "Partly cloudy";
+        if ([45, 48].includes(code)) return "Foggy";
+        if ([51, 53, 55].includes(code)) return "Drizzle";
+        if ([61, 63, 65].includes(code)) return "Rain";
+        if ([71, 73, 75, 77].includes(code)) return "Snow";
+        if ([80, 81, 82].includes(code)) return "Showers";
+        if ([95, 96, 99].includes(code)) return "Thunderstorms";
+        return "Cloudy";
+    }
+
+    fetch(url)
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+            return res.json();
+        })
+        .then((data) => {
+            const current = data.current;
+            if (!current) {
+                throw new Error("No current weather data");
+            }
+
+            const temp = Math.round(current.temperature_2m);
+            const desc = describeWeather(current.weather_code);
+
+            tempEl.textContent = `Chicago, ${temp}°F, ${desc}`;
+        })
+        .catch((err) => {
+            console.error("Weather error:", err);
+            tempEl.textContent = "Chicago, 42°F, Cloudy"
+        });
 }
 
 // Map zoom function
-document.addEventListener("DOMContentLoaded", () => {
+function setupMapModal() {
     const mapThumb = document.querySelector(".map-thumb");
     const modal = document.getElementById("map-modal");
     const modalImg = document.getElementById("map-modal-img");
     const closeBtn = document.querySelector(".close-map");
 
-    if(mapThumb) {
-        mapThumb.addEventListener("click", () => {
-            modal.style.display = "flex";
-            modalImg.src = mapThumb.src;
-        });
-    }
+    if (!mapThumb || !modal || !modalImg) return;
+    
+    mapThumb.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = mapThumb.src;
+    });
 
     if (closeBtn) {
         closeBtn.addEventListener("click", () => {
@@ -135,4 +174,4 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.style.display = "none";
         }
     });
-});
+}
