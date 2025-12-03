@@ -7,6 +7,8 @@
 
 html,
 body {
+    margin: 0;
+    padding: 0;
     height: auto;
 }
 
@@ -14,12 +16,6 @@ body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--npu-gold);
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
 }
 
 /* Blue and gold helpers */
@@ -199,7 +195,7 @@ main {
 
 /* Footer */
 .bottom-bar {
-    margin-top: auto;
+    margin-top: 0;
 }
 
 /* Back to top button */
