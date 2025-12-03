@@ -10,7 +10,7 @@ This project is for my final project for my Web Development class to show skills
 
 1. Home Page
 - Top header with university logo + live weather widget using the Open-Meteo API.
-- Gold fetaure bar with links to:
+- Gold feature bar with links to:
     - Campus Events
     - Campus Dining
     - Campus Map
@@ -48,7 +48,7 @@ Back to home link at the top, and back to top button at the bottom
 - Git and Github for version control
 - Github Pages for deployment
 
-## Here is how to run th project locally
+## Here is how to run the project locally
 1. Clone the repository
 2. Open the project folder in your code editor
 3. Open index.html in your browser

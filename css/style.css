@@ -110,7 +110,7 @@ body {
     overflow: hidden; /* Hide overflowing */
 }
 
-/* Wrapper holds all slides stacke don top of eachother */
+/* Wrapper holds all slides stacked don top of eachother */
 .carousel-wrapper {
     position: relative;
     width: 100%;
