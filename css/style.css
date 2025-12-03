@@ -1,10 +1,11 @@
-/* Colors */
+/* Colors used across the site */
 :root {
-    --npu-blue: #002b5c;
-    --npu-gold: #c89d2f;
-    --overlay-bg: rgba(0, 0, 0, 0.45);
+    --npu-blue: #002b5c; /* Blue color */
+    --npu-gold: #c89d2f; /* Gold color */
+    --overlay-bg: rgba(0, 0, 0, 0.45); /* Overlay color for text on images */
 }
 
+/* Reset margin and padding, and set base height behaviour */
 html,
 body {
     margin: 0;
@@ -12,6 +13,7 @@ body {
     height: auto;
 }
 
+/* Body styles, font and background color */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -33,6 +35,7 @@ body {
     font-weight: 700;
 }
 
+/* Small logo size */
 .logo-sm {
     height: 40px;
     width: auto;
@@ -40,19 +43,21 @@ body {
 
 /* Weather widget */
 #weather-widget {
-    min-width: 120px;
+    min-width: 120px; /* Prevents widget from shrinking too much on small screens */
 }
 
 /* Gold feature bar */
 .feature-bar {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light separator line */
 }
 
+/* Remove underline and inherit color for feature links*/
 .feature-link {
     text-decoration: none;
     color: inherit;
 }
 
+/* On hover, underline to show it's clickable */
 .feature-link:hover h2 {
     text-decoration: underline;
 }
@@ -63,27 +68,29 @@ body {
     width: auto;
     border-radius: 6px;
     object-fit: cover;
-    cursor: pointer;
-    border: 2px solid rgba(0, 0, 0, 0.25);
+    cursor: pointer; /* Show it's clickable */
+    border: 2px solid rgba(0, 0, 0, 0.25); /* Small border to separate from background */
 }
 
 /* Map modal*/
 .map-modal {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
     z-index: 9999;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
+/* Bigger image in modal */
 .map-modal-content {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
 }
 
+/* Close button in top right */
 .close-map {
     position: absolute;
     top: 20px;
@@ -97,27 +104,30 @@ body {
 /* Carousel */
 .hero-carousel {
     position: relative;
-    height: 82vh;
-    min-height: 420px;
+    height: 82vh; /* Take up most of the height */
+    min-height: 420px; /* Minimum height on shorter screens */
     max-height: none;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflowing */
 }
 
+/* Wrapper holds all slides stacke don top of eachother */
 .carousel-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
+/* Position is absolute for images, and they fade in and out */
 .carousel-slide {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.6s ease; /* Smooth fade */
 }
 
+/* Only the active slide is visible */
 .carousel-slide.active {
     opacity: 1;
 }
@@ -133,12 +143,13 @@ body {
     border-radius: 10px;
 }
 
+/* Large quote text */
 .hero-quote {
     margin: 0;
     color: #ffffff;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 750;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.85);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.85); /* Helps with readability */
 }
 
 /* Carousel controls */
@@ -156,14 +167,17 @@ body {
     transition: background 0.2s ease, transform 0.15s ease;
 }
 
+/* Place previous button on the left */
 .carousel-control.prev {
     left: 1.25rem;
 }
 
+/* Place next button on the right */
 .carousel-control.next {
     right: 1.25rem;
 }
 
+/* Slight zoom and darker background when hovering */
 .carousel-control:hover {
     background: rgba(0, 0, 0, 0.75);
     transform: scale(1.1);
@@ -179,6 +193,7 @@ body {
     gap: 0.5rem;
 }
 
+/* Dot style */
 .dot {
     width: 12px;
     height: 12px;
@@ -189,6 +204,7 @@ body {
     cursor: pointer;
 }
 
+/* Active dot is filled */
 .dot.active {
     background: #ffffff;
 }
@@ -205,6 +221,7 @@ body {
 
 /* Responsive tweaks */
 @media (max-width: 576px) {
+    /* Move and shrink overlay on smaller screens */
     .carousel-overlay {
         max-width: 80%;
         top: 1rem;
@@ -212,6 +229,7 @@ body {
         padding: 0.75rem 1rem;
     }
 
+    /* Reduce carousel height on small screens */
     .hero-carousel {
         height: 60vh;
     }
@@ -219,10 +237,10 @@ body {
 
 /* Events page */
 .events-main {
-    min-height: 70vh;
+    min-height: 70vh; /* Give enough height so footer sits at the bottom */
 }
 
-/* White rounded cards*/
+/* White rounded cards with soft shadow */
 .event-card {
     background: #ffffff;
     border-radius: 12px;
@@ -245,12 +263,13 @@ body {
     margin-right: 0.4rem;
 }
 
-/* Dining page */
+/* Shared back-link style for events and dining page */
 .back-link {
     font-size: 0.9rem;
     white-space: nowrap;
 }
 
+/* A little bit larger arrow for back link */
 .back-link span:first-child {
     font-size: 1.1rem;
 }
@@ -260,12 +279,14 @@ body {
     width: 80px;
 }
 
+/* Dining card style */
 .dining-card {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.68);
     border: none;
 }
 
+/* Blue underline for titles */
 .dining-title {
     display: inline-block;
     border-bottom: 3px solid var(--npu-blue);

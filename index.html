@@ -19,6 +19,7 @@
         <!-- Top Blue Bar -->
         <header class="top-header bg-npu-blue text-white">
             <div class="container py-3 d-flex align-items-center justify-content-between">
+                <!-- Left: University logo -->
                 <div class="d-flex align-items-center gap-2">
                     <img src="images/npu-logo.png" alt="North Park University logo" class="logo-sm"/>
                 </div>
@@ -31,6 +32,7 @@
                 <!-- Right: Weather widget placeholder -->
                 <div id="weather-widget" class="text-end small">
                     <div class="fw-semibold">Campus Weather</div>
+                    <!-- This text is updated by JS using the API -->
                     <div id="weather-temp">Loading...</div>
                 </div>
             </div>
@@ -43,6 +45,7 @@
 
                     <!-- Campus Events -->
                     <div class="col-12 col-md-4">
+                        <!-- Link to events page -->
                         <a href="events.html" class="feature-link">
                             <h2 class="h5 mb-1">Campus Events</h2>
                             <p class="mb-0 small">- Stay updated</p>
@@ -51,6 +54,7 @@
 
                     <!-- Campus Dining -->
                     <div class="col-12 col-md-4">
+                        <!-- Link to dining page -->
                         <a href="dining.html" class="feature-link">
                             <h2 class="h5 mb-1">Campus Dining</h2>
                             <p class="mb-0 small">- Explore dining</p>
@@ -63,6 +67,7 @@
                             <h2 class="h5 mb-0">Campus Map</h2>
                             <p class="mb-1 small">- Find your way around</p>
                             <img src="images/campus-map.png" alt="Campus map" class="map-thumb"/>
+                            <!-- Google Maps link to North Park University -->
                             <a href="https://www.google.com/maps/search/?api=1&query=North+Park+University+Chicago+IL" target="_blank" rel="noopener noreferrer" class="small link-dark">Need directions? Click here to open Google Maps</a>
                         </div>
                     </div>
@@ -72,6 +77,7 @@
 
         <!-- Image Carousel -->
         <main>
+            <!-- Fullscreen carousel controlled by script.js-->
             <section class="hero-carousel position-relative">
                 <div class="carousel-wrapper">
 
@@ -113,15 +119,19 @@
         <!-- Bottom Blue Bar / Footer-->
         <footer class="bottom-bar bg-npu-blue text-white py-3 mt-0">
             <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+                <!-- Simple footer text -->
                 <div class="small">2025 Campus Life Super App</div>
+                <!-- Back to top button -->
                 <button id="back-to-top" class="btn btn-outline-light btn-sm"> Back to top</button>
             </div>
         </footer>
 
         <!-- JS -->
         <script src="js/script.js"></script>
-
+        
+        <!-- Modal for campus map -->
         <div id="map-modal" class="map-modal">
+            <!-- Close button -->
             <span class="close-map">&times;</span>
             <img id="map-modal-img" class="map-modal-content" alt="Larger view of the campus map">
         </div>
